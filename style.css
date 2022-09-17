@@ -1,0 +1,89 @@
+* {
+    margin: 0px;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+header {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+p {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+button {
+    height: 40px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.grid > div {
+    background-color: black;
+    border: 5px solid white;
+}
+
+.pvp:hover, .restart.show:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    color: white;
+    font-size: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square:hover {
+    background-color: gray;
+}
+
+.info {
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+.restart {
+    display: none;
+}
+
+.restart.show {
+    display: inline-block;
+    font-size: 15px;
+    width: 150px;
+    background-color: white;
+}
+
