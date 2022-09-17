@@ -34,8 +34,6 @@ let startGame = (function() {
         const box = e.target;
         const currentTurn = oturn ? player2 : player1;
         markSpot(box, currentTurn)
-        console.log(gameArray);
-        console.log(gameArray[0]);
         if (checkWin(currentTurn)) {
             endGame(false) 
         } else if (isTie()) {
