@@ -87,3 +87,8 @@ button {
     background-color: white;
 }
 
+.showturn {
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+}

@@ -13,10 +13,11 @@ let winCombo = [
 ]
 
 let startGame = (function() {
-    let grid = document.querySelector('.grid')
+    let grid = document.querySelector('.grid');
     let main = document.querySelector('.main');
     let start = document.querySelector('.start');
     let info = document.querySelector('.info');
+    let showturn = document.querySelector('.showturn');
     let oturn;
     function makeGrid() {
         main.removeChild(start);
@@ -29,17 +30,20 @@ let startGame = (function() {
             gameArray.push(square);
         }
     button2.classList.add('show');
+    showturn.textContent = `${oturn ? "O" : "X"}'s turn!`;
     }
     function markBox(e) {
         const box = e.target;
         const currentTurn = oturn ? player2 : player1;
         markSpot(box, currentTurn)
         if (checkWin(currentTurn)) {
-            endGame(false) 
+            endGame(false);
+            showturn.textContent = "";
         } else if (isTie()) {
-            endGame(true)
+            endGame(true);
+            showturn.textContent = "";
         } else {
-            changeTurns()
+            changeTurns();
         }
     }
     function restart() {
@@ -51,6 +55,7 @@ let startGame = (function() {
             item.addEventListener("click", markBox, { once: true });
         })
         info.innerText = "";
+        showturn.textContent = `${oturn ? "O" : "X"}'s turn!`;
     }
     function markSpot(box, currentTurn) {
         box.innerHTML = currentTurn.mark;
@@ -76,6 +81,7 @@ let startGame = (function() {
     }
     function changeTurns() {
         oturn = !oturn;
+        showturn.textContent = `${oturn ? "O" : "X"}'s turn!`;
     }
     function checkWin(currentTurn) {
         return winCombo.some(combo => {
